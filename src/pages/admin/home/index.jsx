@@ -1,9 +1,9 @@
-const HomeAdmin = () => {
-  return (
-    <h1 className="w-full h-full bg-orange-200 flex justify-center">
-      /admin/home
-    </h1>
-  );
-};
+import LayoutAdmin from "@/layouts/components/LayoutAdmin";
 
-export default HomeAdmin;
+export default function Dashboard() {
+  return <div>Dashboard</div>;
+}
+
+Dashboard.getLayout = function getLayout(page) {
+  return <LayoutAdmin>{page}</LayoutAdmin>;
+};
