@@ -8,20 +8,30 @@ import {
   MenuFoldOutlined,
 } from "@ant-design/icons";
 import MenuSidebar from "./MenuSidebar";
+import { useRouter } from "next/router";
 
 const LayoutAdmin = ({ children }) => {
   const [isCloseMenu, setIsCloseMenu] = useState(false);
+  const router = useRouter();
 
   const handleClickSidebar = () => {
     setIsCloseMenu(!isCloseMenu);
   };
+
+  const handleLogOut = () => {
+    router.push("/admin");
+  };
+
   const contentPopover = (
     <div className=" cursor-pointer">
       <div className="flex items-center pr-4 py-3 gap-2 border-y hover:bg-[#4361ee1a]">
         <InteractionOutlined />
         <p>Đổi mật khẩu</p>
       </div>
-      <div className="text-red-700 flex items-center pr-4 py-3 gap-2 border-b hover:bg-[#4361ee1a]">
+      <div
+        onClick={() => handleLogOut()}
+        className="text-red-700 flex items-center pr-4 py-3 gap-2 border-b hover:bg-[#4361ee1a]"
+      >
         <LogoutOutlined />
         <p>Sign Out</p>
       </div>
@@ -91,7 +101,7 @@ const LayoutAdmin = ({ children }) => {
           </div>
         </div>
         {/* nội dung trang */}
-        <main>{children}</main>
+        <main className="p-8">{children}</main>
       </div>
     </div>
   );

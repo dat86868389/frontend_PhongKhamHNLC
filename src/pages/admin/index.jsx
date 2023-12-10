@@ -23,12 +23,12 @@ const LoginDev = () => {
         <div className="w-1/2 bg-white flex items-center flex-col justify-center">
           <p className=" mb-7 text-4xl font-mono">Login Admin</p>
 
-          <CustomForm>
+          <CustomForm className="w-1/2">
             <Form
               name="login-form"
               initialValues={{ remember: true }}
               onFinish={onFinish}
-              className="w-64"
+              className="w-full"
             >
               {/* <p className="mb-1">Tài khoản:</p> */}
               <Form.Item
