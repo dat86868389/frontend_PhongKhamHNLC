@@ -1,5 +1,5 @@
 import Link from "next/link";
-import headerStyle from "@/styles/header_style.module.css";
+import layoutUserStyle from "@/styles/layout_user_style.module.css";
 import {
   DownOutlined,
   SearchOutlined,
@@ -11,7 +11,13 @@ import {
 } from "@ant-design/icons";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faCalendarDays,
+  faEnvelope,
+  faLocationPin,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 const LayoutUser = ({ children }) => {
   const [activeSearchbar, setActiveSearchbar] = useState(false);
 
@@ -21,7 +27,7 @@ const LayoutUser = ({ children }) => {
   return (
     <>
       <header>
-        <div className={`${headerStyle.background_info_top}`}>
+        <div className={`${layoutUserStyle.background_info_top}`}>
           <div className="container mx-auto text-white flex justify-between">
             <div className="flex items-center">
               <p className="px-2 flex">
@@ -55,7 +61,7 @@ const LayoutUser = ({ children }) => {
             <div className="flex items-center">
               <img src="/images/logo.png" className="w-14 h-14" />
               <p
-                className={`${headerStyle.text_logo} font-bold xl:text-xl lg:text-base`}
+                className={`${layoutUserStyle.text_logo} font-bold xl:text-xl lg:text-base`}
               >
                 Phòng Khám HNLC
               </p>
@@ -83,7 +89,7 @@ const LayoutUser = ({ children }) => {
                   </Link>
                 </li>
 
-                <li className={`h-full relative ${headerStyle.menu_item}`}>
+                <li className={`h-full relative ${layoutUserStyle.menu_item}`}>
                   <Link
                     href={`#`}
                     className="h-full flex items-center px-2 hover:text-cyan-600 transition-all duration-300 lg:py-0 py-2"
@@ -95,7 +101,7 @@ const LayoutUser = ({ children }) => {
                   </Link>
 
                   <div
-                    className={`${headerStyle.submenu} lg:absolute lg:w-max w-full`}
+                    className={`${layoutUserStyle.submenu} lg:absolute lg:w-max w-full`}
                   >
                     <ul className="w-max bg-white">
                       <li className="w-full">
@@ -212,7 +218,7 @@ const LayoutUser = ({ children }) => {
 
                 {activeSearchbar ? (
                   <div
-                    className={`${headerStyle.searchbar} absolute w-max right-1 py-4 px-2`}
+                    className={`${layoutUserStyle.searchbar} absolute w-max right-1 py-4 px-2`}
                   >
                     <form>
                       <input
@@ -221,7 +227,7 @@ const LayoutUser = ({ children }) => {
                         className="px-4 py-2 text-lg outline-1 outline-cyan-600"
                       />
                       <button
-                        className={`px-4 py-2 text-lg ${headerStyle.button_search} text-white hover:bg-slate-950`}
+                        className={`px-4 py-2 text-lg ${layoutUserStyle.button_search} text-white hover:bg-slate-950`}
                       >
                         <SearchOutlined />
                       </button>
@@ -237,7 +243,7 @@ const LayoutUser = ({ children }) => {
               </button>
               <Link
                 href={`#`}
-                className={`transition-all duration-300 flex items-center p-4 text-white rounded-md hover:bg-slate-950 ${headerStyle.apoiment}`}
+                className={`transition-all duration-300 flex items-center p-4 text-white rounded-md hover:bg-slate-950 ${layoutUserStyle.apoiment}`}
               >
                 Thêm lịch hẹn +
               </Link>
@@ -246,7 +252,130 @@ const LayoutUser = ({ children }) => {
         </div>
       </header>
       <main>{children}</main>
-      <p>Footer</p>
+
+      <footer
+        className={`${layoutUserStyle.background_footer} text-white py-28`}
+      >
+        <div className="container mx-auto relative">
+          <div className="grid grid-cols-4 gap-4">
+            <div className="footer_logo">
+              <div className="flex items-center mb-6">
+                <img src={`/images/logo.png`} className="w-14 h-14" />
+                <span className={`font-bold xl:text-2xl lg:text-2xl`}>
+                  Phòng Khám HNLC
+                </span>
+              </div>
+
+              <p className="text-lg">
+                Slogan có giá trị đối với doanh nghiệp nha sĩ và hoạt động tiếp
+                thị của nó. Mỗi nha sĩ phải nhận thức được tầm quan trọng của
+                Slogan đối với hình ảnh thương hiệu. Slogan là một phần quan
+                trọng của tiếp thị. Đây là những nhận thức về doanh nghiệp của
+                bạn mà bạn muốn khắc sâu trong tâm trí người tiêu dùng, chẳng
+                hạn như sự tin tưởng, đổi mới và chất lượng.
+              </p>
+            </div>
+
+            <div className="footer_logo">
+              <div className="h-14 mb-6 flex items-center">
+                <p className="text-2xl font-medium ">Thời Gian Làm Việc</p>
+              </div>
+              <div className="text-lg">
+                <p className="mb-6">Giờ làm việc: 24/7</p>
+                <p>
+                  Khám bệnh: Sáng 07:30 - 12:00; Chiều 13:00 - 16:30; Tối: 16:30
+                  - 21:00
+                </p>
+              </div>
+            </div>
+
+            <div className="newest_blogs">
+              <div className="h-14 mb-6 flex items-center">
+                <p className="text-2xl font-medium ">Bài Viết Mới</p>
+              </div>
+              <div className="text-lg">
+                <div className="blog mb-6">
+                  <Link href={`#`}>
+                    <div className="flex items-center">
+                      <div>
+                        <div className="w-20 h-20">
+                          <img
+                            src="/images/blog1.jpg"
+                            className="w-full h-full"
+                          />
+                        </div>
+                      </div>
+                      <div className="info_blog mx-4 ">
+                        <p>
+                          <FontAwesomeIcon icon={faCalendarDays} /> 11/12/2023
+                        </p>
+                        <p>Get The Exercise Limited Mobility</p>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+
+                <div className="blog">
+                  <Link href={`#`}>
+                    <div className="flex items-center">
+                      <div>
+                        <div className="w-20 h-20">
+                          <img
+                            src="/images/blog1.jpg"
+                            className="w-full h-full"
+                          />
+                        </div>
+                      </div>
+                      <div className="info_blog mx-4 ">
+                        <p>
+                          <FontAwesomeIcon icon={faCalendarDays} /> 11/12/2023
+                        </p>
+                        <p>Get The Exercise Limited Mobility</p>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="Contact_US">
+              <div className="h-14 mb-6 flex items-center">
+                <p className="text-2xl font-medium ">Liên Hệ Với Chúng Tôi</p>
+              </div>
+              <div className="text-lg">
+                <p className="mb-6">
+                  <FontAwesomeIcon icon={faPhone} className="mr-4" /> 0214 2202
+                  888
+                </p>
+                <p className="mb-6">
+                  <FontAwesomeIcon icon={faEnvelope} className="mr-4" />{" "}
+                  pkhnlc@gmail.com
+                </p>
+
+                <p>
+                  <FontAwesomeIcon icon={faLocationPin} className="mr-4" />
+                  Địa chỉ: Số 022 đường Chiềng On, phường Bình Minh, thành phố
+                  Lào Cai, tỉnh Lào Cai
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className={`${layoutUserStyle.send_email} z-10 p-6`}>
+            <div className="flex">
+              <div className="mail_logo">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </div>
+              <p>Đăng Ký Email Để Nhận Thông Báo Mới Nhất Từ Chúng Tôi</p>
+            </div>
+
+            <form>
+              <input type="text" placeholder="Email" className={`${layoutUserStyle.send_email_input} text-xl py-2 mr-6 px-4`}/>
+              <button className="text-xl text-black bg-white py-2 px-4 transition-all duration-300 hover:text-white hover:bg-black">Xác Nhận</button>
+            </form>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };

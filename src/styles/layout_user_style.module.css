@@ -1,0 +1,53 @@
+.text_logo {
+  color: #002cb7;
+}
+
+.apoiment {
+  background-color: #2490eb;
+}
+
+.submenu {
+  display: none;
+}
+
+.menu_item:hover .submenu {
+  display: block;
+}
+
+.searchbar {
+  background-color: #ffffff;
+}
+
+.button_search {
+  background-color: #14457b;
+}
+
+
+.background_info_top {
+    background-color: #14457B;
+}
+
+.background_footer {
+  background-color: #14457B;
+}
+
+.send_email {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2490EB;
+  position: absolute;
+  width: 100%;
+  top: -50%;
+  transform: translateY(50%);
+}
+
+.send_email_input{
+  background-color: #3A9BED;
+  border: none;
+  outline: none;
+}
+
+.send_email_input::placeholder {
+  color: #F0F8FE;
+}
